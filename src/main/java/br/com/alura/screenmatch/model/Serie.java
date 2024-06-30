@@ -25,7 +25,7 @@ public class Serie {
     private String poster;
     private String sinopse;
     
-    @OneToMany
+    @OneToMany(mappedBy = "serie")
     private List<Episodio> episodios = new ArrayList<>();
 
     public Serie() {
@@ -51,6 +51,10 @@ public class Serie {
 
     public List<Episodio> getEpisodios() {
         return episodios;
+    }
+
+    public void setEpisodios(List<Episodio> episodios) {
+        this.episodios = episodios;
     }
 
     public String getTitulo() {
